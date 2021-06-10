@@ -1,14 +1,14 @@
 ﻿@page
-@model BookListRazor.Pages.BookList.CreateModel
-
+@model BookListRazor.Pages.BookList.EditModel
 
 <br />
-<h2 class="text-info">Add New Book</h2>
-<br/>
+<h2 class="text-info">Edit Book</h2>
+<br />
 
 <div class="border-container" style="padding: 30px">
     <form method="post">
-        <div class="text-danger"asp-validation-summary="ModelOnly"></div>
+        <input type="hidden" asp-for="Book.Id" />
+        <div class="text-danger" asp-validation-summary="ModelOnly"></div>
         <div class="form-group row">
             <div class="col-3">
                 <label asp-for="Book.Name"></label>
@@ -38,7 +38,7 @@
         </div>
         <div class="form-group row">
             <div class="col-3 offset-4">
-                <input  type="submit" value="Add Book" class=" btn btn-primary form-control" />
+                <input type="submit" value="Update Book" class=" btn btn-primary form-control" />
             </div>
             <div class="col-3">
                 <a asp-page="Index" class="btn btn-success form-control">Back To List</a>
@@ -47,6 +47,6 @@
     </form>
 </div>
 
-@section Scripts{ 
+@section Scripts{
     <partial name="_ValidationScriptsPartial" />
 }
